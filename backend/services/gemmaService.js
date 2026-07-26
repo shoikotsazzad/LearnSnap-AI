@@ -95,6 +95,7 @@ function sanitizeWhiteboardResult(result) {
         q.correctIndex >= 0 &&
         q.correctIndex <= 3
     ),
+    flowchart: typeof result.flowchart === 'string' ? result.flowchart.trim() : '',
   };
 }
 

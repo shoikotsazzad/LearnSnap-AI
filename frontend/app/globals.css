@@ -1,0 +1,104 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #f6f1e3;
+  --foreground: #1e2f27;
+  --card: #fffdf7;
+  --card-foreground: #1e2f27;
+  --border: #e3d9c1;
+  --muted: #6b6152;
+  --muted-bg: #efe5cf;
+  --primary: #c1652e;
+  --primary-foreground: #fffaf1;
+  --accent: #b04f39;
+  --amber-bg: #faedd3;
+  --amber-border: #d98a3f;
+  --amber-text: #7a4a17;
+  --success: #2f7a4f;
+  --danger: #b23b3b;
+}
+
+.dark {
+  --background: #142720;
+  --foreground: #f3ead9;
+  --card: #1b332a;
+  --card-foreground: #f3ead9;
+  --border: #2a463b;
+  --muted: #a79d87;
+  --muted-bg: #1f392f;
+  --primary: #e2864f;
+  --primary-foreground: #17251f;
+  --accent: #e2775a;
+  --amber-bg: #3a2b12;
+  --amber-border: #d98a3f;
+  --amber-text: #f5cf9a;
+  --success: #6cc48f;
+  --danger: #e28080;
+}
+
+:root,
+.dark {
+  --nav-bg: #0f201a;
+  --nav-foreground: #f3ead9;
+  --nav-muted: #a79d87;
+  --nav-border: #223a30;
+  --nav-hover: #173026;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-muted-bg: var(--muted-bg);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-amber-bg: var(--amber-bg);
+  --color-amber-border: var(--amber-border);
+  --color-amber-text: var(--amber-text);
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+  --color-nav-bg: var(--nav-bg);
+  --color-nav-foreground: var(--nav-foreground);
+  --color-nav-muted: var(--nav-muted);
+  --color-nav-border: var(--nav-border);
+  --color-nav-hover: var(--nav-hover);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+* {
+  transition-property: background-color, border-color, color;
+  transition-duration: 150ms;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}

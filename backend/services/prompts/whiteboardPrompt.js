@@ -24,7 +24,8 @@ Respond with ONLY one valid JSON object, no markdown code fences, no commentary 
   "summary": string, a concise study summary, 150 to 250 words,
   "keyPoints": string[], the most important concepts, each a short standalone statement,
   "flashcards": [{ "question": string, "answer": string }], at least 10 flashcards covering the material,
-  "quiz": [{ "question": string, "options": [string, string, string, string], "correctIndex": number (0-3), "explanation": string, a brief explanation of why the correct answer is correct }], exactly 10 multiple-choice questions
+  "quiz": [{ "question": string, "options": [string, string, string, string], "correctIndex": number (0-3), "explanation": string, a brief explanation of why the correct answer is correct }], exactly 10 multiple-choice questions,
+  "flowchart": string, a Mermaid.js flowchart (starting with "flowchart TD") that visually explains the topic's process or structure as a step-by-step diagram. Use short node labels in double quotes, e.g. A["Start"] --> B["Next step"]. Keep it to 5-10 nodes. Do NOT use the [?][/?] confidence marker anywhere inside this field, since it would break the diagram syntax. If the source content has no clear process, sequence, or structure to diagram, use a simple diagram of the main topic branching into its key concepts instead.
 }`;
 }
 
