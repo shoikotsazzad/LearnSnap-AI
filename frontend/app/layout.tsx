@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { LanguageProvider } from "@/lib/i18n";
 import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 import { Toaster } from "sonner";
 
 const geistSans = Geist({
@@ -41,7 +42,8 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <LanguageProvider>
             <Navbar />
-            {children}
+            <div className="flex-1">{children}</div>
+            <Footer />
             <Toaster richColors position="top-center" />
           </LanguageProvider>
         </ThemeProvider>
